@@ -1,0 +1,104 @@
+mat-list {
+  margin-top: 100px;
+  margin-left: 10px;
+  width: 100px;
+}
+
+mat-list-item {
+  margin: 5px;
+
+}
+
+mat-card-subtitle {
+  margin-left: 20px;
+}
+
+/*mat-card{*/
+/*width: 150px;*/
+/*height: auto;*/
+/*}*/
+.bar {
+  margin-top: 100px;
+  width: 198px;
+
+}
+
+.header {
+  width: auto;
+  margin-bottom: 100px;
+  position: relative;
+}
+
+.example-header-image {
+  margin-top: 15px;
+  background-image: url('https://material.angular.io/assets/img/examples/shiba1.jpg');
+  background-size: cover;
+}
+
+.groups {
+  margin-top: -165px;
+  margin-left: 300px;
+}
+
+.add {
+  margin-right: 50px;
+}
+
+.example-section {
+  display: flex;
+  flex-direction: column;
+}
+
+mat-cell {
+  overflow: visible;
+}
+
+mat-header-cell {
+  overflow: visible;
+}
+
+.test {
+  background-color: darkgray;
+  margin-top: 25px;
+}
+
+.headerTable {
+  font-size: 20px;
+  margin: 2% 2% 2% 40%;
+}
+
+.testActionPanel {
+  margin-top: 45px;
+  margin-bottom: 45px;
+
+}
+
+.testActionButton {
+  margin-right: 15px;
+  margin-left: 15px;
+  display: flex;
+  flex-direction: row;
+}
+
+.TestPanel {
+  margin-left: 43%;
+  margin-bottom: 30px;
+}
+
+.linkTestToGroup {
+  margin-left: 45%;
+}
+
+.groupExpansion {
+  margin-top: 25px;
+  margin-bottom: 25px;
+}
+
+.groupCard {
+  background-color: #eee;
+}
+
+.Addgroup {
+  margin-left: 40%;
+}
+

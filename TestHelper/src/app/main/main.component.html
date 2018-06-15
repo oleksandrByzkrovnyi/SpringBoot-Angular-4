@@ -1,0 +1,43 @@
+<mat-toolbar>
+
+  <button mat-raised-button="true" routerLink="/login" routerLinkActive="active">Увійти</button>
+  <button mat-raised-button="true" routerLink="/singup" routerLinkActive="active">Реєстрація</button>
+</mat-toolbar>
+<mat-tab-group class="mat-body">
+  <mat-tab label="Для чого створений цей сайт?">
+    <mat-card>
+      <mat-card-title>Створюйте власні тести!</mat-card-title>
+      <p>Цей ресурс був створений для того, щоб кожен із вчителів не витрачав купу часу на підготовку бланків для
+        самостійних робіт та різних тестів.</p>
+    </mat-card>
+    <mat-divider></mat-divider>
+    <mat-card>
+      <mat-card-title>Переглядайте свої результати!</mat-card-title>
+      <p>Тепер вам не треба бігати за викладачем в надії, що він скаже вам вашу оцінку)</p>
+    </mat-card>
+    <mat-divider></mat-divider>
+    <mat-card>
+      <mat-card-title>Додавайте до ваших груп вже створені тести!</mat-card-title>
+      <p>І справді, навіщо створювати все знову, якщо можна створити один раз.</p>
+    </mat-card>
+    <mat-divider></mat-divider>
+    <mat-card>
+      <mat-card-title>Можете не хвилюватись, щодо правильності перевірки тестів!</mat-card-title>
+      <p>Цим займеться нейронна мережа від <strong>IBM Watson</strong>. <strong>Visual Recognition</strong> дозволяє
+        розпізнавати будь-що на картинках</p>
+    </mat-card>
+
+  </mat-tab>
+  <mat-tab label="Як користуватись?">
+    <mat-card class="part">
+      <mat-card-title>Під час реєстрації вкажіть:</mat-card-title>
+      <mat-card-content><strong>1)</strong> Документ, за яким вас будуть ідентифікувати</mat-card-content>
+    </mat-card>
+    <mat-card class="part">
+        <mat-card-title>Завантажуйте зображення у форматі:</mat-card-title>
+        <mat-card-content><strong>1)</strong> .jpg</mat-card-content>
+        <mat-card-content><strong>2)</strong> .png</mat-card-content>
+    </mat-card>
+  </mat-tab>
+</mat-tab-group>
+

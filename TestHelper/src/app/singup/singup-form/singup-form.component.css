@@ -1,0 +1,10 @@
+mat-horizontal-stepper {
+  width: 60%;
+  margin: 18% 28%;
+  border: 1px gray solid;
+
+}
+
+.input {
+  margin: 0 25px 0 25px;
+}

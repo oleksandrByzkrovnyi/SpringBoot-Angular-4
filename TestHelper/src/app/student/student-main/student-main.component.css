@@ -1,0 +1,28 @@
+.header {
+  width: auto;
+  height: 70px;
+}
+
+.example-header-image {
+  margin-top: 15px;
+  background-image:  url('https://material.angular.io/assets/img/examples/shiba1.jpg');
+ /*background-image: url("material-icons md-dark");*/
+  background-size: cover;
+}
+
+.addToGroup {
+  margin-top: 10px;
+  margin-bottom: 50px;
+  margin-left: 30px;
+
+}
+
+.subMenu {
+  margin-left: 40px;
+}
+
+.result {
+  margin-top: 10px;
+  margin-bottom: 50px;
+  margin-left: 25%;
+}

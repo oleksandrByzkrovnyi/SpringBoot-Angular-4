@@ -1,0 +1,99 @@
+<mat-horizontal-stepper [linear]="true" #stepper="matHorizontalStepper">
+
+  <mat-step [stepControl]="firstFormGroup">
+    <form [formGroup]="firstFormGroup">
+      <ng-template matStepLabel>Введіть номер вашого документу</ng-template>
+
+      <mat-radio-group [ngModelOptions]="{standalone: true}" [(ngModel)]="isPassport">
+        <mat-radio-button class="input" [value]="true">Паспорт</mat-radio-button>
+        <mat-radio-button class="input" [value]="false">Студентський квиток</mat-radio-button>
+      </mat-radio-group>
+
+      <mat-form-field *ngIf="isPassport" matTooltip="Формат введення ХХ-000000">
+        <input type="text"
+               required
+               formControlName="document"
+               class="input"
+               matInput
+               placeholder="Номер документу"
+               [textMask]="{mask: maskPassport}"
+               [(ngModel)]="user.idUser">
+      </mat-form-field>
+      <mat-form-field *ngIf="!isPassport" matTooltip="Формат введення ХХ-000000">
+        <input type="text"
+               required
+               formControlName="document"
+               class="input"
+               matInput
+               placeholder="Номер документу"
+               [textMask]="{mask: maskStud}"
+               [(ngModel)]="user.idUser" >
+      </mat-form-field>
+      <mat-card-content>Оберіть ваш посвідчуючий документ</mat-card-content>
+      <div>
+        <button mat-button matStepperNext type="button">Далі</button>
+      </div>
+    </form>
+  </mat-step>
+
+
+  <mat-step [stepControl]="secondFormGroup">
+    <form [formGroup]="secondFormGroup">
+      <ng-template matStepLabel>Введіть особисті дані</ng-template>
+      <mat-form-field  matTooltipPosition="before">
+        <input matInput placeholder="Прізвище" [(ngModel)]="user.lastName" formControlName="lastName" required>
+      </mat-form-field>
+      <mat-form-field>
+        <input matInput placeholder="Ім'я" [(ngModel)]="user.firstName" formControlName="firstName" required>
+      </mat-form-field>
+      <div>
+        <button mat-button matStepperPrevious>Назад</button>
+        <button mat-button matStepperNext>Далі</button>
+      </div>
+    </form>
+  </mat-step>
+
+  <mat-step [stepControl]="thirdFormGroup">
+    <form [formGroup]="thirdFormGroup">
+      <ng-template matStepLabel>Введіть дані для входу</ng-template>
+      <mat-form-field>
+        <input matInput placeholder="Email" [(ngModel)]="user.email" formControlName="email" required>
+      </mat-form-field>
+      <mat-form-field>
+        <input matInput type="password" placeholder="Password" [(ngModel)]="user.password" formControlName="password"
+               required>
+      </mat-form-field>
+      <div>
+        <button mat-button matStepperPrevious>Назад</button>
+        <button mat-button matStepperNext>Далі</button>
+      </div>
+    </form>
+  </mat-step>
+
+  <mat-step [stepControl]="fourthFormGroup">
+    <form [formGroup]="fourthFormGroup">
+      <ng-template matStepLabel>Введіть дані про освіту</ng-template>
+      <mat-radio-group [ngModelOptions]="{standalone: true}" [(ngModel)]="user.position">
+        <mat-radio-button class="input" value="STUDENT">Студент</mat-radio-button>
+        <mat-radio-button class="input" value="TEACHER">Вчитель</mat-radio-button>
+      </mat-radio-group>
+      <mat-form-field>
+        <input matInput placeholder="Учбовий заклад" [(ngModel)]="user.activity" formControlName="activity" required>
+      </mat-form-field>
+      <div>
+        <button mat-button matStepperPrevious>Назад</button>
+        <button mat-button matStepperNext>Далі</button>
+      </div>
+    </form>
+  </mat-step>
+
+  <mat-step>
+    <ng-template matStepLabel>Виконано</ng-template>
+    <div>
+      <button mat-button matStepperPrevious>Назад</button>
+      <button mat-button (click)="stepper.reset()">Скинути все</button>
+      <button mat-button (click)="singUp()">Зареєструватись</button>
+    </div>
+  </mat-step>
+</mat-horizontal-stepper>
+

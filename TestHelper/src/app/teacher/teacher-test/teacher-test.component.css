@@ -1,0 +1,46 @@
+mat-list {
+  margin-top: 100px;
+  margin-left: 10px;
+  width: 100px;
+}
+
+mat-list-item {
+  margin: 5px;
+
+}
+
+mat-card-subtitle {
+  margin-left: 20px;
+}
+
+/*mat-card{*/
+/*width: 150px;*/
+/*height: auto;*/
+/*}*/
+.bar {
+  margin-top: 100px;
+  width: 198px;
+
+}
+
+.header {
+  width: auto;
+  margin-bottom: 100px;
+  position: relative;
+}
+
+.example-header-image {
+  margin-top: 15px;
+  background-image: url('https://material.angular.io/assets/img/examples/shiba1.jpg');
+  background-size: cover;
+}
+
+.groups {
+  margin-top: -220px;
+  margin-left: 300px;
+}
+
+.add {
+  margin-right: 50px;
+}
+

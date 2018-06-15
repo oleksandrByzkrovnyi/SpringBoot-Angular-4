@@ -1,0 +1,49 @@
+<mat-card class="header">
+  <mat-card-header>
+    <div mat-card-avatar class="example-header-image"></div>
+    <mat-card-title>
+      <button mat-button [matMenuTriggerFor]="menu">{{user.firstName}} {{user.lastName}}</button>
+    </mat-card-title>
+    <mat-card-subtitle>{{user.position}}</mat-card-subtitle>
+  </mat-card-header>
+</mat-card>
+
+
+<mat-menu #menu="matMenu">
+  <button mat-menu-item>Редагувати профіль</button>
+  <button mat-menu-item (click)="logOut()">Вийти</button>
+</mat-menu>
+
+<div class="bar">
+  <mat-card>
+    <mat-list>
+      <mat-list-item>
+        <button mat-button routerLink="/main_teacher" routerLinkActive="true">Головна</button>
+      </mat-list-item>
+      <mat-list-item>
+        <button mat-button routerLink="/teacher_groups" routerLinkActive="true">Групи</button>
+      </mat-list-item>
+    </mat-list>
+  </mat-card>
+</div>
+
+<div class="groups">
+  <mat-card>
+    <mat-accordion>
+      <mat-expansion-panel (opened)="panelOpenState = true"
+                           (closed)="panelOpenState = false">
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            Додати тест
+          </mat-panel-title>
+          <mat-panel-description>
+            Шляхом вибору шаблонів відповідей та назви тесту, створіть новий.
+          </mat-panel-description>
+        </mat-expansion-panel-header>
+        <app-add-test></app-add-test>
+      </mat-expansion-panel>
+    </mat-accordion>
+
+
+  </mat-card>
+</div>

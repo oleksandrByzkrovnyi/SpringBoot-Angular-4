@@ -1,0 +1,64 @@
+
+.addTemplate {
+  margin-top: 25px;
+}
+
+.example-full-width {
+  width: 15%;
+}
+
+.example-full-width {
+  margin: 1%;
+}
+
+.template {
+  padding: 2%;
+  border: black 1px solid;
+  width: 75%;
+}
+
+.CreateTest {
+  padding: 2%;
+  border: black 1px solid;
+  width: 25%;
+}
+
+body {
+  display: flex;
+  flex-direction: row;
+}
+
+.addTemplate {
+  width: 200%;
+}
+
+.inputName {
+  width: 50%;
+
+}
+
+.example-section {
+  display: flex;
+  flex-direction: column;
+}
+
+mat-cell {
+  overflow: visible;
+}
+
+mat-header-cell {
+  overflow: visible;
+}
+.templates{
+  display: flex;
+  flex-direction: row;
+}
+.deleteTemplate{
+  margin-left: 20%;
+}
+.deleteTemplateButton{
+  margin-left: 50px;
+}
+.example-form-field{
+  width: 100%;
+}

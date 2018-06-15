@@ -1,0 +1,67 @@
+
+
+  <mat-card-subtitle>Перелік готових шаблонів (правильних) відповідей</mat-card-subtitle>
+
+<mat-accordion>
+  <mat-expansion-panel>
+    <mat-expansion-panel-header>Створюйте тести</mat-expansion-panel-header>
+    <div class="templates">
+      <mat-form-field>
+        <mat-select placeholder="Оберіть правильні відповіді" multiple (selectionChange)="replaceTemplate()"
+                    [(ngModel)]="selectedTemplate">
+          <mat-select-trigger>
+            {{toppings.value ? toppings.value[0].questionNum + toppings.value[0].answer : ''}}
+            <span *ngIf="toppings.value?.length > 1" class="example-additional-selection">
+        (+{{toppings.value.length - 1}} others)
+      </span>
+          </mat-select-trigger>
+          <mat-option *ngFor="let template of templates" [value]="template">{{template.questionNum}}
+            {{template.answer}}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+    <form class="example-form-field">
+      <mat-form-field class="inputName">
+        <input [(ngModel)]="enterName" matInput placeholder="Назва Тесту" [formControl]="NameFormControl"
+               [errorStateMatcher]="matcher">
+        <mat-error *ngIf="!NameFormControl.hasError('required')">
+          Please enter a valid name
+        </mat-error>
+        <mat-error *ngIf="NameFormControl.hasError('required')">
+          Name is <strong>required</strong>
+        </mat-error>
+      </mat-form-field>
+      <button mat-raised-button (click)="addTest()">Створити</button>
+    </form>
+<mat-card style="background-color: beige">
+  <mat-form-field>
+    <mat-select placeholder="Ваші додані правильні варіанти" [(ngModel)]="selectedTemplateToDel">
+      <mat-option>None</mat-option>
+      <mat-option *ngFor="let state of selectedTemplates" [value]="state" >{{state.questionNum}} {{state.answer}}</mat-option>
+    </mat-select>
+  </mat-form-field>
+<button mat-raised-button (click)="deleteSelectedTemplate()">Видалити обраний варіант</button>
+</mat-card>
+
+
+  </mat-expansion-panel>
+
+</mat-accordion>
+
+    <form class="example-form-field">
+      <mat-card-subtitle>Додати шаблон відповіді</mat-card-subtitle>
+      <mat-form-field class="example-full-width">
+        <input type="tel" [formControl]="NumberFormControl" matInput matTooltip="Максимальне значення = 12" placeholder="Номер питання"
+               [(ngModel)]="newTemplate.questionNum">
+      </mat-form-field>
+      <mat-form-field class="example-full-width">
+        <input type="tel" [formControl]="AnswerFormControl" matInput matTooltip="Тут тільки [А,Б,В,Г,Д]" [textMask]="{mask: maskAnswer}"
+               placeholder="Відповідь" [(ngModel)]="newTemplate.answer">
+      </mat-form-field>
+      <button mat-raised-button="warn" type="submit" (click)="addTemplate()">Додати</button>
+    </form>
+
+
+
+

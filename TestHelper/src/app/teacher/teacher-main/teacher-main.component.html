@@ -1,0 +1,46 @@
+<mat-card class="header">
+  <mat-card-header>
+    <div mat-card-avatar class="example-header-image"></div>
+    <mat-card-title>
+      <button mat-button [matMenuTriggerFor]="menu">{{user.firstName}} {{user.lastName}}</button>
+    </mat-card-title>
+    <mat-card-subtitle>{{user.position}}</mat-card-subtitle>
+  </mat-card-header>
+</mat-card>
+
+
+<mat-menu #menu="matMenu">
+  <button mat-menu-item (click)="editProfile()">Редагувати профіль</button>
+  <button mat-menu-item (click)="logOut()">Вийти</button>
+</mat-menu>
+<mat-card>
+  <mat-list>
+    <mat-list-item>
+      <button mat-button routerLink="/main_teacher" routerLinkActive="true" matBadge="8" matBadgePosition="before">Головна</button>
+    </mat-list-item>
+    <mat-list-item>
+      <button mat-button routerLink="/teacher_groups" routerLinkActive="true">Групи</button>
+    </mat-list-item>
+  </mat-list>
+</mat-card>
+
+
+<mat-card class="wantToConnect">
+<mat-list>
+  <mat-card-title class="Title">Бажаючі приєднатись</mat-card-title>
+  <mat-divider></mat-divider>
+  <mat-list-item class="item" *ngFor="let item of disableGroups">
+    <div class="content">
+      <mat-card-header class="Group">До групи: {{item.nameGroup}}</mat-card-header>
+      <mat-card-header class="Student">Хоче долучитись: {{item.nameStudent}} </mat-card-header>
+    </div>
+    <div class="action-row">
+      <button mat-raised-button class="butRow"  color="primary" (click)="acceptStudent(item)">Підтвердити</button>
+      <button mat-raised-button  color="warn"  (click)="denied(item)">Скасувати</button>
+    </div>
+  </mat-list-item>
+  <mat-card-header class="errorMessage" *ngIf="disableGroups.length===0">{{emptyMessage}}</mat-card-header>
+  <mat-divider class="bottomDivider"></mat-divider>
+</mat-list>
+</mat-card>
+

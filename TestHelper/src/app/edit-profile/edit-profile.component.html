@@ -1,0 +1,63 @@
+
+  <mat-list>
+    <mat-card>
+      <mat-card-header>Редагування профілю</mat-card-header>
+    </mat-card>
+    <mat-form-field class="example-full-width">
+      <input matInput placeholder={{user.lastName}}  [(ngModel)]="lastName" [formControl]="lastNameControl">
+    </mat-form-field>
+    <mat-form-field class="example-full-width">
+      <input matInput  placeholder={{user.firstName}} [(ngModel)]="firstName" [formControl]="firstNameControl">
+    </mat-form-field>
+
+
+    <mat-accordion  class="expansion">
+      <mat-expansion-panel>
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            Змінити пароль
+          </mat-panel-title>
+        </mat-expansion-panel-header>
+        <mat-form-field>
+          <input matInput type="password" placeholder="Введіть старий пароль" [(ngModel)]="oldPass" [formControl]="oldPassControl">
+          <mat-error *ngIf="oldPass != user.password">
+            Це не ваш старий пароль
+          </mat-error>
+        </mat-form-field>
+        <mat-form-field>
+          <input matInput type="password" placeholder="Введіть новий пароль" [(ngModel)]="newPass" [formControl]="newPassControl">
+          <mat-error *ngIf="newPass === oldPass">
+            Паролі не співпадають
+          </mat-error>
+        </mat-form-field>
+        <mat-form-field>
+          <input matInput type="password" placeholder="Введіть знову новий пароль" [(ngModel)]="confirm" [formControl]="ConfirmPass">
+          <mat-error *ngIf="newPass != confirm">
+            Паролі не співпадають
+          </mat-error>
+        </mat-form-field>
+      </mat-expansion-panel>
+    </mat-accordion>
+
+    <mat-accordion class="expansion" >
+      <mat-expansion-panel>
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            Змінити пошту
+          </mat-panel-title>
+        </mat-expansion-panel-header>
+        <mat-form-field>
+          <input matInput type="email" placeholder="Пошта" [(ngModel)]="newEmail" [formControl]="emailControl">
+          <mat-error *ngIf="newEmail === user.email">
+            Це і є ваш старий email
+          </mat-error>
+        </mat-form-field>
+      </mat-expansion-panel>
+    </mat-accordion>
+    <button class="editButton" mat-raised-button color="warn" (click)="editProfile()">Внести зміни</button>
+  </mat-list>
+
+
+
+
+

@@ -1,0 +1,13 @@
+<mat-card>
+  <mat-card-subtitle>
+    Назва групи
+  </mat-card-subtitle>
+  <mat-form-field>
+    <input matInput type="text" [(ngModel)]="name"/>
+    <button mat-button *ngIf="name" matSuffix mat-icon-button aria-label="Clear" (click)="name=''">
+      <mat-icon>close</mat-icon>
+    </button>
+  </mat-form-field>
+  <button mat-raised-button color="primary" (click)="createGroup()">Додати</button>
+</mat-card>
+

@@ -1,0 +1,21 @@
+<form>
+  <div class="example-container">
+    <mat-form-field>
+      <input matInput [(ngModel)]="user.email" name="email" placeholder="Enter your email" [formControl]="email"
+             required>
+      <mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error>
+    </mat-form-field>
+    <mat-form-field>
+      <input [(ngModel)]="user.password" name="password" type="password" matInput placeholder="Password">
+    </mat-form-field>
+    <button type="submit" (click)="login()" mat-raised-button>Увійти</button>
+  </div>
+</form>
+<mat-card class="osvita">
+  <iframe  src="http://osvita.ua/" width="100%" height="500">
+  </iframe>
+</mat-card>
+
+
+
+

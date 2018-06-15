@@ -1,0 +1,18 @@
+<mat-card class="header">
+  <mat-card-header>
+    <div mat-card-avatar class="example-header-image"></div>
+    <mat-card-title>
+      <button mat-button [matMenuTriggerFor]="menu">{{user.firstName}} {{user.lastName}}</button>
+    </mat-card-title>
+    <mat-card-subtitle class="subMenu">{{user.position}}</mat-card-subtitle>
+    <button class="result" mat-raised-button color="primary" (click)="openDialogResult()">Результати тестів</button>
+    <button class="addToGroup" (click)="openDialog()" mat-raised-button color="primary">Приєднатися до групи</button>
+  </mat-card-header>
+</mat-card>
+
+
+<mat-menu #menu="matMenu">
+  <button mat-menu-item (click)="editProfile()">Редагувати профіль</button>
+  <button mat-menu-item (click)="logOut()">Вийти</button>
+</mat-menu>
+
